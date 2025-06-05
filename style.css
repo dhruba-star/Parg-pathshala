@@ -118,7 +118,7 @@ body {
 }
 /* Section 2: Coaching Programs */
 .programs-section {
-  background-color: #fdf6ee;
+  background: linear-gradient(90deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%);
   padding: 60px 25px;
   text-align: center;
 }
@@ -146,7 +146,7 @@ body {
 }
 
 .program-card {
-  background-color: #fff;
+  background: linear-gradient(90deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%);
   border-radius: 12px;
   overflow: hidden;
   max-width: 300px;
