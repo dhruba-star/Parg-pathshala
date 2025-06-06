@@ -1,97 +1,34 @@
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const categoryBtns = document.querySelectorAll('.category-btn');
+  const faqCategories = document.querySelectorAll('.faq-category');
+  const faqQuestions = document.querySelectorAll('.faq-question');
 
-document.addEventListener("DOMContentLoaded", () => {
+  categoryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selected = btn.getAttribute('data-category');
 
-  const faqData = [
+      categoryBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-    {
-
-      question: "What is the monthly payment of class 8?",
-
-      answer: "We charge only 1200/- per month. You have to pay us on the first of the month."
-
-    },
-
-    {
-
-      question: "Do you offer online classes?",
-
-      answer: "Currently, we offer in-person classes only. Online classes are under consideration."
-
-    },
-
-    {
-
-      question: "Can I schedule a session online?",
-
-      answer: "You can contact us through our contact page to schedule sessions or ask questions."
-
-    }
-
-  ];
-
-  const faqContainer = document.getElementById("faq-list");
-
-  faqData.forEach((item, index) => {
-
-    const faqItem = document.createElement("div");
-
-    faqItem.className = "accordion-item";
-
-    faqItem.innerHTML = `
-
-      <button class="accordion-header" aria-expanded="false" aria-controls="faq-body-${index}" id="faq-${index}">
-
-        ${item.question}
-
-        <span class="icon">⌄</span>
-
-      </button>
-
-      <div class="accordion-body" id="faq-body-${index}" role="region" aria-labelledby="faq-${index}">
-
-        ${item.answer}
-
-      </div>
-
-    `;
-
-    faqContainer.appendChild(faqItem);
-
-  });
-
-  // Add interaction
-
-  document.querySelectorAll(".accordion-header").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-      const item = button.parentElement;
-
-      const expanded = button.getAttribute("aria-expanded") === "true";
-
-      document.querySelectorAll(".accordion-item").forEach(i => {
-
-        i.classList.remove("active");
-
-        i.querySelector(".accordion-header").setAttribute("aria-expanded", "false");
-
+      faqCategories.forEach(cat => {
+        const catName = cat.getAttribute('data-category');
+        cat.classList.remove('active');
+        if (selected === 'all' || catName === selected) {
+          cat.classList.add('active');
+        }
       });
-
-      if (!expanded) {
-
-        item.classList.add("active");
-
-        button.setAttribute("aria-expanded", "true");
-
-        setTimeout(() => item.scrollIntoView({ behavior: "smooth", block: "center" }), 200);
-
-      }
-
     });
-
   });
 
-});
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const item = question.parentElement;
+      item.classList.toggle('open');
+    });
+  });
 
+  // Initialize with 'all' visible
+  document.querySelector('.category-btn[data-category="all"]').click();
+});
 </script>
