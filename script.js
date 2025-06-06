@@ -1,4 +1,4 @@
-<script>
+
 document.addEventListener("DOMContentLoaded", function () {
   const categoryBtns = document.querySelectorAll('.category-btn');
   const faqCategories = document.querySelectorAll('.faq-category');
@@ -31,4 +31,4 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize with 'all' visible
   document.querySelector('.category-btn[data-category="all"]').click();
 });
-</script>
+
