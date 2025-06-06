@@ -1,6 +1,6 @@
 
   const sidebar = document.getElementById('sidebar');
-  const openBtn = document.querySelector('.menu-icon');
+  const openBtn = document.getElementById('menutoggle');
   const closeBtn = document.getElementById('closeSidebar');
 
   openBtn.addEventListener('click', () => {
