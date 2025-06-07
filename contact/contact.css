@@ -1,0 +1,80 @@
+
+  
+    body {
+      font-family: 'Poppins', sans-serif; /* Adjusted for your brand */
+      background-color: #fefefe;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .contact-section {
+      max-width: 700px;
+      margin: 80px auto;
+      padding: 30px 25px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+    }
+
+    .contact-section h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #2d2d2d;
+    }
+
+    .contact-section p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border 0.3s ease;
+    }
+
+    form input:focus,
+    form select:focus,
+    form textarea:focus {
+      border-color: #6b46c1;
+      outline: none;
+    }
+
+    form label {
+      font-weight: 500;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    button[type="submit"] {
+      background: #6b46c1;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background: #5936a0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .contact-section {
+        padding: 20px;
+        margin: 50px 15px;
+      }
+    }
