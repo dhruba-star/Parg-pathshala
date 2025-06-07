@@ -6,17 +6,17 @@ const closeSidebar = document.getElementById("closeSidebar");
 
 // Open sidebar
 menuToggle.addEventListener("click", () => {
-  sidebar.classList.add("show-sidebar");
+  sidebar.classList.add("active");
 });
 
 // Close sidebar
 closeSidebar.addEventListener("click", () => {
-  sidebar.classList.remove("show-sidebar");
+  sidebar.classList.remove("active");
 });
 
-// Optional: Close sidebar when a link is clicked
+// Optional: Close sidebar when a nav link is clicked
 document.querySelectorAll(".sidebar .nav-link").forEach(link => {
   link.addEventListener("click", () => {
-    sidebar.classList.remove("show-sidebar");
+    sidebar.classList.remove("active");
   });
 });
