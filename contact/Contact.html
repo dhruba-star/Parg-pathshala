@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – Parg Pathshala</title>
+  <style>
+    /* Base Styles */
+    body {
+      font-family: 'Poppins', sans-serif; /* Adjusted for your brand */
+      background-color: #fefefe;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .contact-section {
+      max-width: 700px;
+      margin: 80px auto;
+      padding: 30px 25px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+    }
+
+    .contact-section h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #2d2d2d;
+    }
+
+    .contact-section p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border 0.3s ease;
+    }
+
+    form input:focus,
+    form select:focus,
+    form textarea:focus {
+      border-color: #6b46c1;
+      outline: none;
+    }
+
+    form label {
+      font-weight: 500;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    button[type="submit"] {
+      background: #6b46c1;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background: #5936a0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .contact-section {
+        padding: 20px;
+        margin: 50px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <p>
+      We'd love to hear from you! Whether it's a question, suggestion, or you want to know more about our coaching services, just fill out the form below.
+    </p>
+    <form action="https://formspree.io/f/mzzgdype" method="POST">
+      <label for="name">Your Name *</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" name="phone" placeholder="+880" required>
+
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
+
+      <label for="need">What do you need? *</label>
+      <select id="need" name="need" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="admission">Admission Info</option>
+        <option value="classes">Class Details</option>
+        <option value="fees">Fee & Payment</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="message">Brief Description *</label>
+      <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+</body>
+</html>
