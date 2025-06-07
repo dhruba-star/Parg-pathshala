@@ -1,20 +1,17 @@
 
-  const sidebar = document.getElementById('sidebar');
-  const openBtn = document.getElementById('menutoggle');
-  const closeBtn = document.getElementById('closeSidebar');
+  // Wait for the DOM to load
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menutoggle");
+    const sidebar = document.getElementById("sidebar");
+    const closeBtn = document.getElementById("closeSidebar");
 
-  openBtn.addEventListener('click', () => {
-    sidebar.classList.add('active');
-  });
+    // Open sidebar on menu icon click
+    menuToggle.addEventListener("click", function () {
+      sidebar.style.transform = "translateX(0)";
+    });
 
-  closeBtn.addEventListener('click', () => {
-    sidebar.classList.remove('active');
-  });
-
-  // Optional: Highlight active link based on current page
-  const links = document.querySelectorAll('.nav-link');
-  links.forEach(link => {
-    if (window.location.href.includes(link.getAttribute('href'))) {
-      link.classList.add('active');
-    }
+    // Close sidebar on close icon click
+    closeBtn.addEventListener("click", function () {
+      sidebar.style.transform = "translateX(-100%)";
+    });
   });
