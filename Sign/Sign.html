@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parg Pathshala | Sign In</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h2>Sign In to Parg Pathshala</h2>
+      <p>If you already have an account, please log in.</p>
+      <button class="google-btn" onclick="signInWithGoogle()">Sign in with Google</button>
+      <div class="divider">or</div>
+
+      <form id="signInForm">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="email" id="email" placeholder="Email Address" required />
+        <input type="tel" id="phone" placeholder="Mobile Number" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+
+        <button type="submit">Create Account</button>
+      </form>
+    </div>
+    <div class="illustration">
+      <img src="https://undraw.co/api/illustrations/cefb3bdf-3c93-4b82-a99d-2d16f2a8a1b1" alt="Sign In Illustration" />
+    </div>
+  </div>
+
+  <div class="popup" id="emailPopup">
+    <p>Please confirm your email to complete registration.</p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
