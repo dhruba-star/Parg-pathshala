@@ -70,7 +70,10 @@
     button[type="submit"]:hover {
       background: #5936a0;
     }
-
+    .photo{
+      max-width:100%;
+      width:100%;
+    }
     /* Responsive */
     @media (max-width: 600px) {
       .contact-section {
