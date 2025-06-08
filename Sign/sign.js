@@ -1,58 +1,95 @@
-// Firebase configuration
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+  signInWithPopup,
+  GoogleAuthProvider
+} from "https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js";
+
+import {
+  getFirestore,
+  doc,
+  setDoc
+} from "https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js";
+
+// Firebase config
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_DOMAIN.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_BUCKET.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyBNAQjVl4C_TjMvIdvQDAbGWaxm2QSgikY",
+  authDomain: "parg-pathshala.firebaseapp.com",
+  projectId: "parg-pathshala",
+  storageBucket: "parg-pathshala.appspot.com",
+  messagingSenderId: "180752050484",
+  appId: "1:180752050484:web:42cd167cf51392f8525d61",
+  measurementId: "G-LEHRJWCBD2"
 };
 
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore();
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-const form = document.getElementById('signInForm');
-
-form.addEventListener('submit', async (e) => {
+// 🔐 Register with Email & Password
+document.getElementById("signUpForm").addEventListener("submit", async (e) => {
   e.preventDefault();
-  const name = form['name'].value;
-  const email = form['email'].value;
-  const phone = form['phone'].value;
-  const password = form['password'].value;
-  const confirmPassword = form['confirmPassword'].value;
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
 
   if (password !== confirmPassword) {
-    alert("Passwords do not match.");
+    alert("❌ Passwords do not match!");
     return;
   }
 
   try {
-    const userCredential = await auth.createUserWithEmailAndPassword(email, password);
-    await userCredential.user.sendEmailVerification();
-    await db.collection("users").doc(userCredential.user.uid).set({
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+
+    await sendEmailVerification(user);
+    showPopup("✅ Confirmation email sent. Please check your inbox.");
+
+    await setDoc(doc(db, "users", user.uid), {
       name,
       email,
       phone,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      createdAt: new Date().toISOString()
     });
-    document.getElementById('emailPopup').style.display = 'block';
   } catch (error) {
-    alert(error.message);
+    alert(`❌ ${error.message}`);
   }
 });
 
-function signInWithGoogle() {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  auth.signInWithPopup(provider)
-    .then(result => {
-      alert("Signed in with Google");
-    })
-    .catch(error => {
-      alert(error.message);
-    });
-}
+// 🔐 Google Sign-In
+document.getElementById("googleSignIn").addEventListener("click", async () => {
+  const provider = new GoogleAuthProvider();
 
-function closePopup() {
-  document.getElementById('emailPopup').style.display = 'none';
+  try {
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+
+    await setDoc(doc(db, "users", user.uid), {
+      name: user.displayName,
+      email: user.email,
+      phone: user.phoneNumber || "Not provided",
+      provider: "Google",
+      createdAt: new Date().toISOString()
+    });
+
+    alert("✅ Signed in with Google successfully!");
+  } catch (error) {
+    alert(`❌ ${error.message}`);
+  }
+});
+
+// ✅ Popup function
+function showPopup(message) {
+  const popup = document.getElementById("popup");
+  popup.textContent = message;
+  popup.style.display = "block";
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 5000);
 }
