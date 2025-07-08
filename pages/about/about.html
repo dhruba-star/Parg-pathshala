@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Parg Pathshala</title>
+  <!-- Font & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #cbd5e1;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .reverse {
+      flex-direction: row-reverse;
+    }
+
+    .text-col, .img-col {
+      flex: 1 1 500px;
+    }
+
+    .text-col h2 {
+      color: #ff5722;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .text-col p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .img-col img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .stat-box {
+      flex: 1 1 200px;
+      background: #e0f0ff;
+      padding: 30px 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .stat-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-box i {
+      font-size: 2rem;
+      color: #0d47a1;
+      margin-bottom: 10px;
+    }
+
+    .stat-box h3 {
+      font-size: 1.6rem;
+      margin-bottom: 5px;
+      color: #1e293b;
+    }
+
+    .stat-box p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .row {
+        flex-direction: column;
+      }
+      .stats {
+        flex-direction: column;
+        gap: 30px;
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Header -->
+  <header>
+    <h1>About Parg Pathshala</h1>
+    <p>Empowering students in Habiganj with structured learning, experienced teachers, and heartfelt mentorship.</p>
+  </header>
+
+  <!-- Our Mission -->
+  <section class="row fade-in">
+    <div class="img-col">
+      <img src="https://source.unsplash.com/600x400/?school,classroom" alt="Our Mission">
+    </div>
+    <div class="text-col">
+      <h2><i class="fas fa-bullseye text-accent"></i> Our Mission</h2>
+      <p>
+        We guide students through a journey of academic success while nurturing confidence and real-world readiness. Our aim is to make learning joyful, structured, and purposeful.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="row reverse fade-in">
+    <div class="img-col">
+      <img src="https://source.unsplash.com/600x400/?students,learning" alt="Our Story">
+    </div>
+    <div class="text-col">
+      <h2><i class="fas fa-history text-accent"></i> Our Story</h2>
+      <p>
+        Established in 2021 in Habiganj, Parg Pathshala began with a mission to redefine coaching with compassion and clarity. Since then, we've impacted hundreds of young minds with personalized support and effective teaching methods.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="fade-in">
+    <div class="stats">
+      <div class="stat-box">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>300+</h3>
+        <p>Students Guided</p>
+      </div>
+      <div class="stat-box">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h3>12</h3>
+        <p>Dedicated Tutors</p>
+      </div>
+      <div class="stat-box">
+        <i class="fas fa-award"></i>
+        <h3>100%</h3>
+        <p>Board Exam Success</p>
+      </div>
+      <div class="stat-box">
+        <i class="fas fa-book-open-reader"></i>
+        <h3>5+</h3>
+        <p>Years of Experience</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Simple scroll reveal for fade-in elements
+    const fadeIns = document.querySelectorAll('.fade-in');
+
+    const onScroll = () => {
+      fadeIns.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        const isVisible = top < window.innerHeight - 100;
+        if (isVisible) el.classList.add('show');
+      });
+    };
+
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('load', onScroll);
+  </script>
+</body>
+        </html>
