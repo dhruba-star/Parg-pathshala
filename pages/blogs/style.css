@@ -15,9 +15,9 @@ body {
 /* Hero Section */
 section.hero {
   padding: 4rem 2rem;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
-  text-align: left;
+  text-align: center;
 }
 
 .hero h1 {
