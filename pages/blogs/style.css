@@ -1,23 +1,32 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Base Styles */
+* {
   margin: 0;
   padding: 0;
-  color: #222;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+/* Hero Section */
 section.hero {
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: auto;
+  text-align: left;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
   font-weight: 700;
+  margin-bottom: 1rem;
 }
 
-.hero p.description {
+.hero .description {
   font-size: 1.1rem;
   color: #555;
   max-width: 600px;
@@ -27,11 +36,11 @@ section.hero {
 .cta-btn {
   display: inline-block;
   background-color: #34b2e4;
-  color: white;
+  color: #fff;
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
   transition: background 0.3s ease;
 }
 
@@ -41,7 +50,7 @@ section.hero {
 
 .testimonial-box {
   background: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 1rem 1.5rem;
   border-radius: 10px;
   margin-top: 2rem;
@@ -68,4 +77,90 @@ section.hero {
 .testimonial-author span {
   font-size: 0.9rem;
   color: #444;
+}
+
+/* Features Section */
+section.features {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.features .subheading {
+  color: #666;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+}
+
+.feature-block {
+  background-color: #fff8f2;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.feature-block:hover {
+  transform: translateY(-4px);
+}
+
+.feature-block h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.feature-block p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+}
+
+.feature-block img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero .description,
+  .cta-btn,
+  .testimonial-box {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .testimonial-author {
+    justify-content: center;
+  }
+
+  section.features {
+    padding: 3rem 1rem;
+  }
+
+  .feature-block {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .feature-block img {
+    margin-top: 1rem;
+  }
   }
