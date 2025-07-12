@@ -56,17 +56,18 @@ a {
 /* ========== Hero Section ========== */
 .hero {
   padding: 4rem 1rem;
-  text-align: center;
+  
 }
 
 .hero h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .hero .description {
   font-size: 1.1rem;
-  color: var(--text-light);
+  color: dark-gray;
   max-width: 700px;
   margin: 0 auto 2rem;
 }
