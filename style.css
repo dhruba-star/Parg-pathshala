@@ -432,11 +432,12 @@ body {
 .faq-answer {
   padding: 0 30px;
   max-height: 0;
-  overflow: hidden;
+  overflow: true;
   transition: max-height 0.5s ease, padding 0.5s ease;
   background-color: #fefefe;
   text-align: justify;
   border-top: 1px solid #f0f0f0;
+  
 }
 
 .faq-item.active .faq-answer {
@@ -449,6 +450,7 @@ body {
   color: #555;
   font-size: 1.05em;
   line-height: 1.8;
+  overflow-x:true;
 }
 
 /* Responsive styles (optional) */
@@ -468,6 +470,7 @@ body {
 
   .faq-answer {
     padding: 0 20px;
+    overflow-x: true;
   }
 
   .faq-item.active .faq-answer {
