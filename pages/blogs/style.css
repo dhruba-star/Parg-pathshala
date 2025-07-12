@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Noto Sans Bengali', sans-serif;
   color: #222;
   line-height: 1.6;
   background-color: #fff;
@@ -164,7 +164,8 @@ section.features {
   .feature-block img {
     margin-top: 1rem;
   }
-  }
+}
+
 /* Benefits Section */
 section.benefits {
   padding: 4rem 2rem;
@@ -216,30 +217,7 @@ section.benefits {
   line-height: 1.6;
 }
 
-/* Walkthrough Box */
-.walkthrough {
-  margin-top: 3rem;
-  background: #f9f9f9;
-  border-radius: 10px;
-  padding: 2rem;
-  text-align: center;
-}
-
-.walkthrough h4 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.walkthrough p {
-  color: #555;
-  font-size: 1rem;
-  max-width: 600px;
-  margin: auto;
-  line-height: 1.6;
-}
-
-/* Responsive */
+/* Responsive for Benefits */
 @media (max-width: 768px) {
   .benefit {
     flex-direction: column;
@@ -255,97 +233,151 @@ section.benefits {
     max-width: 100%;
   }
 }
-/* Walkthrough Section */
+
+/* ========== Updated Walkthrough Section ========== */
 .walkthrough-section {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 4rem auto;
   padding: 2rem;
-  text-align: left;
+  font-family: 'Noto Sans Bengali', sans-serif;
+  color: #333;
+  text-align: center;
 }
 
 .walkthrough-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  text-align: center;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.walkthrough-sub {
-  text-align: center;
-  color: #666;
-  margin-bottom: 2.5rem;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.walkthrough-step {
-  margin-bottom: 2.5rem;
-}
-
-.walkthrough-step h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
   margin-bottom: 0.5rem;
   color: #222;
 }
 
-.walkthrough-step p {
-  color: #444;
-  font-size: 1rem;
+.walkthrough-sub {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 3rem;
   line-height: 1.6;
 }
 
-.walkthrough-step img {
-  margin-top: 1rem;
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+/* Step Cards */
+.walkthrough-step {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
+  text-align: left;
 }
 
+.walkthrough-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.walkthrough-step h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  color: #007bff;
+}
+
+.walkthrough-step p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+.walkthrough-step img {
+  margin-top: 1.2rem;
+  max-width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Read More */
 .read-more-link {
   display: inline-block;
-  margin-top: 1rem;
-  color: #007BFF;
-  font-weight: 500;
+  margin-top: 1.2rem;
+  color: #007bff;
+  font-weight: 600;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.read-more-link i {
+  margin-left: 5px;
 }
 
 .read-more-link:hover {
   color: #0056b3;
 }
 
+/* Note Box */
 .walkthrough-note {
-  background: #f3f9ff;
+  background: linear-gradient(to right, #f5f9ff, #eef4ff);
+  border-left: 5px solid #007bff;
+  border-radius: 10px;
   padding: 2rem;
-  border-left: 4px solid #007BFF;
-  border-radius: 8px;
+  margin-top: 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .walkthrough-note h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: #222;
 }
 
 .walkthrough-note p {
   font-size: 1rem;
-  color: #444;
-  line-height: 1.6;
+  color: #333;
+  line-height: 1.7;
 }
 
-/* Responsive */
+/* Responsive Walkthrough */
 @media (max-width: 768px) {
   .walkthrough-section {
     padding: 1rem;
   }
 
   .walkthrough-title {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+  }
+
+  .walkthrough-sub {
+    font-size: 1rem;
+  }
+
+  .walkthrough-step {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .walkthrough-step h3 {
     font-size: 1.2rem;
+  }
+
+  .walkthrough-step p {
+    font-size: 0.95rem;
+  }
+
+  .walkthrough-note {
+    padding: 1.5rem;
+  }
+
+  .walkthrough-note h4 {
+    font-size: 1.2rem;
+  }
+
+  .walkthrough-note p {
+    font-size: 0.95rem;
+  }
+
+  .read-more-link {
+    font-size: 0.9rem;
   }
   }
