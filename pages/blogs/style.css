@@ -255,3 +255,97 @@ section.benefits {
     max-width: 100%;
   }
 }
+/* Walkthrough Section */
+.walkthrough-section {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: left;
+}
+
+.walkthrough-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.walkthrough-sub {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.walkthrough-step {
+  margin-bottom: 2.5rem;
+}
+
+.walkthrough-step h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.walkthrough-step p {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.walkthrough-step img {
+  margin-top: 1rem;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.read-more-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #007BFF;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.read-more-link:hover {
+  color: #0056b3;
+}
+
+.walkthrough-note {
+  background: #f3f9ff;
+  padding: 2rem;
+  border-left: 4px solid #007BFF;
+  border-radius: 8px;
+}
+
+.walkthrough-note h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.walkthrough-note p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .walkthrough-section {
+    padding: 1rem;
+  }
+
+  .walkthrough-title {
+    font-size: 1.6rem;
+  }
+
+  .walkthrough-step h3 {
+    font-size: 1.2rem;
+  }
+  }
