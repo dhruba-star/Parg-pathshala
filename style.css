@@ -13,19 +13,12 @@ body {
   font-size: 16px;
 }
 
-/* Sticky Header Container */
-.sticky-header {
+/* Navigation Bar with sticky */
+.nav {
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #ffffff;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  padding: 4px 0;
-}
-
-/* Navigation Bar */
-.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
