@@ -53,45 +53,7 @@ a {
   padding: 0 1.5rem;
 }
 
-/* ========== Hero Section ========== */
-.hero {
-  padding: 4rem 1rem;
-  
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.hero .description {
-  font-size: 2.8rem;
-  color: dark-gray;
-  max-width: 700px;
-  margin: 0 auto 3rem;
-}
-
-.cta-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
-  background-color: var(--primary);
-  color: #fff;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-}
-
-.cta-btn:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
+/*=====hero not needed =====*/
 /* ========== Features Section ========== */
 .features {
   padding: 4rem 1rem;
