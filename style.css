@@ -13,41 +13,6 @@ body {
   font-size: 16px;
 }
 
-/* Navigation Bar with sticky */
-.nav {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-  max-width: 1000px;
-  border-bottom: 1px solid #ddd;
-  background-color: white;
-}
-
-/* Logo Styling */
-.logo {
-  height: 40px;
-  object-fit: contain;
-}
-
-/* Three-Dot Menu Icon */
-.menu-icon {
-  font-size: 22px;
-  color: #333;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-.menu-icon:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
 /* INTRO SECTION */
 .intro-section {
   padding: 30px 25px;
