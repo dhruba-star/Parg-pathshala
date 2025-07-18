@@ -106,33 +106,9 @@
   .logo {
     height: 32px;
   }
-
-  /* Hide any inline nav links if they exist */
-  .nav-links {
-    display: none;
-  }
-
   /* Ensure the menu icon shows up */
   .menu-icon {
     display: block;
   }
 
-  /* Sidebar adjustments for smaller screens */
-  .sidebar {
-    width: 100%;
-    max-width: none;
-    padding: 16px;
-  }
-
-  .search-box {
-    padding: 8px 12px;
-  }
-
-  .search-box input {
-    font-size: 14px;
-  }
-
-  .sidebar-links a {
-    font-size: 16px;
-  }
-}
+  
