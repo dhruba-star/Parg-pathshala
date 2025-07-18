@@ -104,7 +104,8 @@
   }
 
   .logo {
-    height: 32px;
+    height: 42px;
+    margin-right:10px
   }
   /* Ensure the menu icon shows up */
   .menu-icon {
