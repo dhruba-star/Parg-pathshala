@@ -37,3 +37,13 @@ export default function Courses() {
     </div>
   );
 }
+import CourseHero from '../components/CourseHero';
+
+function CoursePage() {
+  return (
+    <div>
+      <CourseHero />
+      <Courses />
+    </div>
+  );
+}
