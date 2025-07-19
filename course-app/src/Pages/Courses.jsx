@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import CourseCard from "../components/CourseCard.jsx";
+import CourseHero from "../components/CourseHero.jsx";
 import { db } from "../firebase/firebase.js";
 import { collection, getDocs } from "firebase/firestore";
 
-export default function Courses() {
+// Component to fetch and show courses
+function Courses() {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -37,9 +39,9 @@ export default function Courses() {
     </div>
   );
 }
-import CourseHero from '../components/CourseHero';
 
-function CoursePage() {
+// Main page component combining Hero and Course list
+export default function CoursePage() {
   return (
     <div>
       <CourseHero />
